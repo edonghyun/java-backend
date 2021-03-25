@@ -1,0 +1,15 @@
+services:
+    back-end:
+        build:
+            context: ./backend
+            dockerfile: Dockerfile
+        ports:
+            - '8080:8080'
+        restart: always
+        networks:
+            - backend-network
+            - frontend-network
+
+networks:
+    backend-network:
+    frontend-network:
