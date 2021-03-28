@@ -1,6 +1,8 @@
-package com.example.demo;
+package com.example.demo.controller.user;
 
 import java.util.List;
+
+import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,9 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestBody;
 
 
-import com.example.demo.User;
-import com.example.demo.UserRepository;
-import lombok.extern.slf4j.Slf4j;
+import com.example.demo.model.user.User;
+import com.example.demo.repository.user.UserRepository;
 
 @RestController 
 @RequestMapping("/users")

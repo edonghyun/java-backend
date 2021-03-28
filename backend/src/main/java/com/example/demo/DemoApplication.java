@@ -14,8 +14,8 @@ public class DemoApplication {
 	}
 
 	@GetMapping("/")
-	public String home() {
-		return "Hello Docker World !!";
+	public String index() {
+		return "index";
 	}
 
 }
