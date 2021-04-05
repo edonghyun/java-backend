@@ -6,10 +6,23 @@ services:
         ports:
             - '8080:8080'
         restart: always
+        links:
+            - mongodb
         networks:
             - backend-network
             - frontend-network
-
+    mongodb:
+        image: mongo:3.2.4
+        environment:
+            - MONGO_DATA_DIR=/data/db
+            - MONGO_LOG_DIR=/dev/null
+        volumes:
+            - ./data/db:/data/db
+        command: mongod --smallfiles --logpath=/dev/null # --quiet
+        container_name: "mongodb"
+        ports:
+            - 27017:27017
+        command: --smallfiles
 networks:
     backend-network:
     frontend-network:
